@@ -1,0 +1,181 @@
+superuser:
+user:dev
+pass:dev123!
+
+{
+    "id": 11,
+    "company_name": "Fischer and Klein Traders",
+    "country": "Est obcaecati porro sint harum sunt minus",
+    "flag": "http://127.0.0.1:8000/media/flag_image/japan-flag_Rp5Msym.png",
+    "view_number": 58,
+    "revenue": "3.00",
+    "empolyees": 44
+  },
+
+Company table
+company-name
+country 
+flag
+view_number
+revenue
+employees-number
+Disclosures{
+    all-number(opsi Disclosures sayi)
+    completed-number(Disclosuresdan true olanlarin sayi, default 0)
+}
+date(mms)
+
+
+Disclosures table--companiye bagli(foreignkey)
+[
+title: 'Forecast',
+filesCount={1222}
+filesSizes='95 MB'
+viewsCount={789}
+description='KYC, bank statement'
+tags={['customerData', 'database', 'encryptedData']}(bu taglar tag tablesinden gelecek)
+]
+
+
+Tag table(her companiyin oz tagi var default false)
+tags={[
+{ type: 'encryptedData', active: true },>>>status
+{ type: 'database', active: true },
+{ type: 'customerData', active: true },
+{ type: 'financialData', active: true },
+{ type: 'passwords', active: false },
+{ type: 'pii', active: false },
+{ type: 'privateData', active: false },
+{ type: 'sourceCode', active: false },
+{ type: 'technology', active: false },
+{ type: 'uncategorized', active: false },
+]}
+
+
+
+
+companylere tag elave Et+
+company id-e gore Disclosuresleri alanda companyde viewsCount artir+
+taglar fetch eliyende id yox namesi dussun+
+company ve disclosuresde taglara status elave etme+
+taglarini fetch eliyende status ve namesi dussun+
+
+treenode isLeaf deyis isLeaf key elave et her defe random key elave etsin string
+
+is leaf eger true dropdowna elave etmek olmasin 
+
+
+{
+  folder_link: 'string',
+  folder_structure: [
+  {
+    "key": 21,
+    "title": "main",
+    "isLeaf": false,
+    "children": [
+      {
+        "key": 22,
+        "title": "folder1",
+        "isLeaf": false,
+        "children": [
+          {
+            "key": 24,
+            "title": "file.pdf",
+            "isLeaf": true,
+            "children": []
+          }
+        ]
+      },
+      {
+        "key": 23,
+        "title": "folder2",
+        "isLeaf": false,
+        "children": [
+          {
+            "key": 25,
+            "title": "file2.pdf",
+            "isLeaf": true,
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
+}
+
+
+
+filesize filecount elnen girilsin admin panelde++
+file disclosures elave elemeden yaddasa vermesin(admin panelde)++
+disclosureni company secmeden elave elemek olmasin++
+
+
+interface news {
+  title: string
+  description: string
+  date: Date
+}
+
+interface shopProduct {
+  accessType: string;
+  revenue: number;
+  country: string;
+  price: number;
+  description: string;
+}
+
+
+
+auction_item: {
+    price: number;
+    title: string;
+    description: string;
+    date: Date;
+    countryName: string;
+    countryFlag: url string;
+}
+
+
+shopProduct = 
+{
+    title: string;
+    company: string;
+    av: string;
+    numberOfHosts: number;
+    rights: string;
+
+    
+    description: string;
+    price: number;
+}
+
+key=1efa1bd8c273beb26d09cbde768fdc0731de7a06
+
+
+
++1. Admin panelin girisine 2 factor authentication qoymaq
+pip install django_otp
+pip install qrcode
+
++2. swaggerin linkine girende cookieni yoxluyursan. Eger cookiede SecretCookie = Secret123 onda gire bilsin swaggere, bele 404 versin
+main appinde middware.py duzelt settingse.py 'main.middleware.SwaggerAccessMiddleware',  middleware-e bunu elave et
+
+3. Butun her seyin yaradilmasi zad, nem silinmesi falan, admin panelden olur bilirem. Ama onlarin necese requestine qoruma qoymaq lazimdi
+
+
+
+1efa1bd8c273beb26d09cbde768fdc0731de7a06
+
+1EFA1BD8C273BEB26D09CBDE768FDC0731DE7A06
+
+
+
+ba28ca037a8d117b12c5f702bee1b98d03656165
+
+
+
+{
+    tox: string;
+    jabber: string;
+}
