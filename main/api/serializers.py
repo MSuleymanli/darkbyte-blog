@@ -16,7 +16,7 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
         fields = [
-            'id', 'company_name', 'country', 'flag', 'revenue', 
+            'id', 'company_name', 'country', 'flag','logo', 'revenue', 
             'employees', 'all_disclosures', 'completed_disclosures', 'date', 
             'unix_date', 'employees_count', 'tag_names','view_number','link'
         ]
@@ -42,7 +42,7 @@ class CompanySerializer(serializers.ModelSerializer):
 class AddCompanySerializer(serializers.ModelSerializer):
     class Meta:
         model=Company
-        fields=['company_name', 'country', 'revenue','flag','employees']
+        fields=['company_name', 'country', 'revenue','flag','logo','employees']
         
         
 class DisclosuresPhotoSerializer(serializers.ModelSerializer):

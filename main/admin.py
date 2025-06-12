@@ -44,7 +44,7 @@ class CompanyFilterInline(admin.TabularInline):
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ('company_name','hidden', 'country', 'completed_disclosures', 'all_disclosures', 'view_number')
     inlines = [CompanyTagInline,CompanyFilterInline]
-    exclude = ('completed_disclosures', 'all_disclosures', 'view_number')
+    exclude = ('completed_disclosures', 'all_disclosures')
 
 
 

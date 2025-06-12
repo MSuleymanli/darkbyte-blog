@@ -15,6 +15,7 @@ class Company(models.Model):
     company_name = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     flag = models.ImageField(upload_to="flag_image/", blank=True, null=True)
+    logo = models.ImageField(upload_to="logo_image/", blank=True, null=True)
     revenue = models.DecimalField(max_digits=100, decimal_places=2, default=0)
     employees = models.PositiveIntegerField(default=0, blank=True, null=True)
     all_disclosures = models.PositiveIntegerField(default=0, blank=True, null=True)

@@ -179,3 +179,9 @@ ba28ca037a8d117b12c5f702bee1b98d03656165
     tox: string;
     jabber: string;
 }
+
+
+
+
+
+companye logo sekil
