@@ -18,7 +18,7 @@ class CompanySerializer(serializers.ModelSerializer):
         fields = [
             'id', 'company_name', 'country', 'flag','logo', 'revenue', 
             'employees', 'all_disclosures', 'completed_disclosures', 'date', 
-            'unix_date', 'employees_count', 'tag_names','view_number','link'
+            'unix_date', 'employees_count', 'tag_names','view_number','link','description'
         ]
         
     def get_unix_date(self, obj):

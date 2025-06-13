@@ -25,6 +25,7 @@ class Company(models.Model):
     filters=models.ManyToManyField('Filter',through='CompanyFilter',blank=True)
     view_number = models.PositiveBigIntegerField(default=0, blank=True, null=True)
     link=models.URLField(blank=True,null=True)
+    description=models.TextField(blank=True,null=True)
     hidden=models.BooleanField(default=False)
 
     def update_disclosure_counts(self):

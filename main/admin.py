@@ -9,59 +9,58 @@ class DisclosuresPhotoInline(admin.TabularInline):
     extra = 1
     fields = ('screenshots',)
 
-class DisclosuresTagInline(admin.TabularInline):
-    model = DisclosuresTag
-    extra = 1
-    fields = ('tag', 'status')
+# class DisclosuresTagInline(admin.TabularInline):
+#     model = DisclosuresTag
+#     extra = 1
+#     fields = ('tag', 'status')
 
 @admin.register(Disclosures)
 class DisclosuresAdmin(admin.ModelAdmin):
     list_display = ('title', 'company', 'status', 'view_number')
-    inlines = [DisclosuresTagInline, DisclosuresPhotoInline]
+    inlines = [ DisclosuresPhotoInline]
     exclude = ('view_number','tags')
     list_filter = ('status', 'company')
     search_fields = ('title', 'company__company_name')
        
 
-@admin.register(Tag)
-class TagAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+# @admin.register(Tag)
+# class TagAdmin(admin.ModelAdmin):
+#     list_display = ('name',)
 
 class CompanyTagInline(admin.TabularInline):
     model = Company.tags.through
     extra = 1
     fields = ('tag', 'status')
     
-class CompanyFilterInline(admin.TabularInline):
-    model=Company.filters.through
-    extra=1
-    fields = ('filter',)
-    def get_queryset(self, request):
-        queryset = super().get_queryset(request)
-        return queryset.select_related('filter') 
+# class CompanyFilterInline(admin.TabularInline):
+#     model=Company.filters.through
+#     extra=1
+#     fields = ('filter',)
+#     def get_queryset(self, request):
+#         queryset = super().get_queryset(request)
+#         return queryset.select_related('filter') 
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ('company_name','hidden', 'country', 'completed_disclosures', 'all_disclosures', 'view_number')
-    inlines = [CompanyTagInline,CompanyFilterInline]
     exclude = ('completed_disclosures', 'all_disclosures')
 
 
 
 
 
-class FileAdmin(admin.ModelAdmin):
-    list_display = ('name', 'file', 'get_node', 'get_disclosure', 'id')
-    search_fields = ('name', 'id')
-    list_filter = ('node',)
+# class FileAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'file', 'get_node', 'get_disclosure', 'id')
+#     search_fields = ('name', 'id')
+#     list_filter = ('node',)
 
-    def get_node(self, obj):
-        return obj.node.title if obj.node else None
-    get_node.short_description = 'Node Title'
+#     def get_node(self, obj):
+#         return obj.node.title if obj.node else None
+#     get_node.short_description = 'Node Title'
 
-    def get_disclosure(self, obj):
-        return obj.node.disclosure.title if obj.node and obj.node.disclosure else None
-    get_disclosure.short_description = 'Disclosure Title'
+#     def get_disclosure(self, obj):
+#         return obj.node.disclosure.title if obj.node and obj.node.disclosure else None
+#     get_disclosure.short_description = 'Disclosure Title'
 
 
 class TreeNodeAdmin(admin.ModelAdmin):
@@ -81,13 +80,13 @@ class TreeNodeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(TreeNode, TreeNodeAdmin)
-admin.site.register(File, FileAdmin)
+# admin.site.register(File, FileAdmin)
 # # admin.site.register(Contact)
 
-@admin.register(Filter)
-class FilterAdmin(admin.ModelAdmin):
-    list_display=('name','count','id')
-    exclude=('count',)
+# @admin.register(Filter)
+# class FilterAdmin(admin.ModelAdmin):
+#     list_display=('name','count','id')
+#     exclude=('count',)
     
 # # @admin.register(News)
 # # class NewsADmin(admin.ModelAdmin):
